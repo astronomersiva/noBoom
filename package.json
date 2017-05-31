@@ -1,0 +1,25 @@
+{
+  "name": "boom",
+  "version": "1.0.0",
+  "description": "Clone of @holman's boom in Node",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "boom": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astronomersiva/noBoom.git"
+  },
+  "author": "sivasubramanyama@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astronomersiva/noBoom/issues"
+  },
+  "homepage": "https://github.com/astronomersiva/noBoom#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.22"
+  }
+}
