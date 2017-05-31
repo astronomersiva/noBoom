@@ -1,11 +1,17 @@
 #! /usr/local/bin/node
 
-interface data {
-  [key: string]: string
+// <list> <name> <value>
+
+interface List {
+  [name: string]: string
+}
+
+interface Lists {
+  [listName: string]: List
 }
 
 class Boom {
-  data: data;
+  lists: Lists;
 
   boomBin: string;
 
@@ -14,10 +20,20 @@ class Boom {
     const { HOME }: { HOME: string } = process.env;
 
     this.boomBin = `${HOME}/.boom`;
-    this.data = fs.existsSync(this.boomBin) ? JSON.parse(fs.readFileSync(this.boomBin)) : {};
+    this.lists = fs.existsSync(this.boomBin) ? JSON.parse(fs.readFileSync(this.boomBin)) : {};
   }
 
-  get(key: string) {
-    return this.data[key];
+  createList(list: string) {
+    this.lists[list] = {};
+  }
+
+  getList(list: string) {
+    let { lists } = this;
+    return lists[list];
+  }
+
+  getAll() {
+    let { lists } = this;
+    return lists;
   }
 }
