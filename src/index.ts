@@ -3,7 +3,7 @@
 // <list> <name> <value>
 
 interface List {
-  [name: string]: string
+  [name: string]: string;
 }
 
 interface Lists {
@@ -33,7 +33,6 @@ class Boom {
   }
 
   getAll() {
-    let { lists } = this;
-    return lists;
+    return this.lists;
   }
 }
